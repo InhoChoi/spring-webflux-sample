@@ -11,7 +11,7 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 @Configuration
 public class RoutingConfiguration {
     @Bean
-    public RouterFunction<ServerResponse> routerFunction(HelloHandler helloHandler) {
-        return route(GET("/"), helloHandler::hello);
+    public RouterFunction<ServerResponse> routerFunction() {
+        return route(GET("/"), request -> ServerResponse.ok().syncBody("Hello World"));
     }
 }
