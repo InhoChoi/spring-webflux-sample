@@ -1,4 +1,4 @@
-group 'spring-webflux-sample'
+group 'spring_webflux_ample'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'

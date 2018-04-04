@@ -1,4 +1,4 @@
-package hello;
+package com.spring_webflux_sample.annotation;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -11,7 +11,7 @@ import reactor.core.publisher.Mono;
 @RestController
 @EnableWebFlux
 @EnableAutoConfiguration
-public class HelloController {
+public class AnnotationHelloController {
 
     @RequestMapping("/")
     @ResponseBody
@@ -20,6 +20,6 @@ public class HelloController {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(HelloController.class, args);
+        SpringApplication.run(AnnotationHelloController.class, args);
     }
 }
