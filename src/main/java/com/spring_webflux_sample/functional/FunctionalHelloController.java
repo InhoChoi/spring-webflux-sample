@@ -2,6 +2,7 @@ package com.spring_webflux_sample.functional;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -16,12 +17,10 @@ import reactor.core.publisher.Mono;
 import static org.springframework.web.reactive.function.server.RequestPredicates.GET;
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 
-@RestController
 @EnableWebFlux
-@EnableAutoConfiguration
-@ComponentScan
+@SpringBootApplication
 public class FunctionalHelloController {
-    public static void main(String[] args) {
-        SpringApplication.run(FunctionalHelloController.class, args);
-    }
+	public static void main(String[] args) {
+		SpringApplication.run(FunctionalHelloController.class, args);
+	}
 }

@@ -6,11 +6,20 @@ apply plugin: 'java'
 sourceCompatibility = 1.8
 
 repositories {
-    mavenCentral()
+	mavenCentral()
 }
 
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web:2.0.0.RELEASE")
-    compile("org.springframework.boot:spring-boot-starter-webflux:2.0.0.RELEASE")
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+	/**
+	 * spring-boot-starter-web을 import 하는 경우에는 tomcat가 먼저 뜨기 때문에 webflux의 기능이 작동이 되지 않을수가 있다.
+	 * compile("org.springframework.boot:spring-boot-starter-web:2.0.0.RELEASE")
+	 */
+	compile("org.springframework.boot:spring-boot-starter-webflux:2.0.0.RELEASE")
+	compile("org.springframework.boot:spring-boot-starter-data-jpa:2.0.0.RELEASE")
+	compile group: 'io.github.benas', name: 'random-beans', version: '3.7.0'
+	compile 'com.google.guava:guava:24.1-jre'
+	compile("org.projectlombok:lombok:1.16.20")
+	compile("com.h2database:h2:1.4.197")
+
+	testCompile group: 'junit', name: 'junit', version: '4.12'
 }
